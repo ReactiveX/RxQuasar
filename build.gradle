@@ -14,7 +14,7 @@ configurations {
 
 
 dependencies {
-    compile 'com.netflix.rxjava:rxjava-core:0.20.2'
+    compile 'io.reactivex:rxjava:1.0.+'
     compile 'co.paralleluniverse:quasar-core:0.6.0'
     quasar  'co.paralleluniverse:quasar-core:0.6.0'
     testCompile 'junit:junit-dep:4.10'
