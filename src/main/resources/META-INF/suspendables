@@ -1,2 +1,6 @@
 rx.Observable.subscribe
 rx.Observable$2.call
+rx.Observable.unsafeSubscribe
+rx.internal.operators.OperatorSubscribeOn$1$1.call
+rx.internal.operators.OperatorSubscribeOn$1$1$1.onNext
+rx.internal.operators.OperatorSubscribeOn$1$1$1.onError
