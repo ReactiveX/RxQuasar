@@ -34,7 +34,6 @@ import org.junit.Test;
 
 import rx.Observable;
 import rx.Observer;
-import rx.exceptions.TestException;
 import rx.subjects.PublishSubject;
 import co.paralleluniverse.fibers.Fiber;
 import co.paralleluniverse.fibers.SuspendExecution;
