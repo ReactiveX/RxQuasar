@@ -1,12 +1,12 @@
 /**
  * Copyright 2014 Netflix, Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -142,7 +142,7 @@ public abstract class AbstractSchedulerTests {
 
     /**
      * The order of execution is nondeterministic.
-     * 
+     *
      * @throws InterruptedException
      */
     @SuppressWarnings("rawtypes")
@@ -150,7 +150,7 @@ public abstract class AbstractSchedulerTests {
     public final void testSequenceOfActions() throws InterruptedException {
         final Scheduler scheduler = getScheduler();
         final Scheduler.Worker inner = scheduler.createWorker();
-        
+
         final CountDownLatch latch = new CountDownLatch(2);
         final Action0 first = mock(Action0.class);
         final Action0 second = mock(Action0.class);
@@ -193,7 +193,7 @@ public abstract class AbstractSchedulerTests {
     public void testSequenceOfDelayedActions() throws InterruptedException {
         Scheduler scheduler = getScheduler();
         final Scheduler.Worker inner = scheduler.createWorker();
-        
+
         final CountDownLatch latch = new CountDownLatch(1);
         final Action0 first = mock(Action0.class);
         final Action0 second = mock(Action0.class);
@@ -225,7 +225,7 @@ public abstract class AbstractSchedulerTests {
     public void testMixOfDelayedAndNonDelayedActions() throws InterruptedException {
         Scheduler scheduler = getScheduler();
         final Scheduler.Worker inner = scheduler.createWorker();
-        
+
         final CountDownLatch latch = new CountDownLatch(1);
         final Action0 first = mock(Action0.class);
         final Action0 second = mock(Action0.class);
@@ -253,6 +253,11 @@ public abstract class AbstractSchedulerTests {
         InOrder inOrder = inOrder(first, second, third, fourth);
 
         inOrder.verify(first, times(1)).call();
+        inOrder.verify(third, times(1)).call();
+        inOrder.verify(second, times(1)).call();
+
+        inOrder = inOrder(first, second, third, fourth);
+
         inOrder.verify(fourth, times(1)).call();
         inOrder.verify(third, times(1)).call();
         inOrder.verify(second, times(1)).call();
@@ -437,7 +442,7 @@ public abstract class AbstractSchedulerTests {
 
     /**
      * Used to determine if onNext is being invoked concurrently.
-     * 
+     *
      * @param <T>
      */
     private static class ConcurrentObserverValidator<T> extends Subscriber<T> {

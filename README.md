@@ -1,4 +1,4 @@
-# rxjava-quasar
+# RxQuasar
 
 Integrates RxJava with [Quasar](https://github.com/puniverse/quasar).
 Includes a fiber (lightweight-thread) based scheduler, and an Observable API for Quasar channels.
@@ -18,16 +18,10 @@ Example for [Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22rxjava-apa
 
 ```xml
 <dependency>
-    <groupId>com.netflix.rxjava</groupId>
-    <artifactId>rxjava-quasar</artifactId>
+    <groupId>io.reactivex</groupId>
+    <artifactId>rxquasar</artifactId>
     <version>x.y.z</version>
 </dependency>
-```
-
-and for Ivy:
-
-```xml
-<dependency org="com.netflix.rxjava" name="rxjava-quasar" rev="x.y.z" />
 ```
 
 # Usage
