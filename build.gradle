@@ -12,7 +12,6 @@ configurations {
     quasar
 }
 
-
 dependencies {
     compile 'io.reactivex:rxjava:1.0.+'
     compile 'co.paralleluniverse:quasar-core:0.6.0'
@@ -20,7 +19,6 @@ dependencies {
     testCompile 'junit:junit-dep:4.10'
     testCompile 'org.mockito:mockito-core:1.8.5'
 }
-
 
 tasks.withType(Test) {
     // systemProperty 'co.paralleluniverse.fibers.verifyInstrumentation', 'true'
@@ -32,7 +30,3 @@ tasks.withType(JavaExec) {
     jvmArgs "-javaagent:${configurations.quasar.iterator().next()}" // =vdmc (verbose, debug, allow monitors, check class)
 }
 
-test {
-    // excluding out all tests until they stop hanging CloudBees
-    excludes = ['**/**']
-}
