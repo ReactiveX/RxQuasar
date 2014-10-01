@@ -77,10 +77,11 @@ public class ChannelObservableTest {
 
             @Override
             public void onError(Throwable e) {
-
+                e.printStackTrace();
+                fail();
             }
         });
-
+        
         c.send("a");
         c.send("b");
         c.send("c");
